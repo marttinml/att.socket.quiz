@@ -153,7 +153,6 @@ module.exports.indicadores = function(db, encuesta, callback) {
                     }
                 }
             }
-
           }
           encuesta.respondida++;
       } else {
