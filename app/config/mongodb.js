@@ -7,16 +7,16 @@ var assert = require('assert');
 // Test connection
 module.exports.testConnection = function(){
 	console.log("	Connecting to mongodb ···");
-    module.exports.ejecute(function(err, db) { 
+    module.exports.ejecute(function(err, client) { 
         assert.equal(null, err);
         
         console.log("	Connection to mongodb ···················· OK \n");
 		console.log("	Server Started ··························· OK \n");
 	    console.log(" - - - - - - - - - - - - - - - - - - - - - - - - - - - -\n\n");
-        db.close();
+        client.close();
     });
 };
 
 module.exports.ejecute = function (handler) {
-	MongoClient.connect(url, handler);
+	MongoClient.connect(url, { useNewUrlParser: true },handler);
 };

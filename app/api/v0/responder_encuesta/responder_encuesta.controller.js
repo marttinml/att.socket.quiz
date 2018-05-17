@@ -12,15 +12,15 @@ module.exports.indicadores = function (id, callback) {
     var d   = new Date();
         start   = d.getMilliseconds();
         Log.logStart({controller : controller, method:'ResponderEncuesta.detail', d : d});
-    Connection.ejecute(function(err, db){
+    Connection.ejecute(function(err, client){
         assert.equal(null, err);
         //ejecute query
 
-        EncuestaModel.detail(db, id,function(encuesta, status){
+        EncuestaModel.detail(client.db(), id,function(encuesta, status){
 
           if(status === 200){
-                ResponderEncuestaModel.indicadores(db, encuesta, function(result) {
-                  db.close();
+                ResponderEncuestaModel.indicadores(client.db(), encuesta, function(result) {
+                  client.close();
                   Log.logEnd({ start : start , response: result});
                   callback(result);
               });
