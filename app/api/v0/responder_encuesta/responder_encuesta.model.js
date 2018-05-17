@@ -159,7 +159,7 @@ module.exports.indicadores = function(db, encuesta, callback) {
         for(var j in  encuesta.graficas){
                 var categoria = encuesta.graficas[j];
                 categoria.porcentaje = ((categoria.porcentaje/(encuesta.respondida*encuesta.preguntas.length))*100) || 0;
-                categoria.porcentaje = Math.floor(categoria.porcentaje);
+                categoria.porcentaje = Math.round(categoria.porcentaje);
         }
         // new
         for(var i in encuesta.preguntas){
@@ -168,7 +168,7 @@ module.exports.indicadores = function(db, encuesta, callback) {
                 var respuesta = pregunta.respuestas[j];
                 var porcentaje = respuesta.porcentaje;
                 respuesta.porcentaje = (porcentaje/encuesta.respondida)*100;
-                respuesta.porcentaje = Math.floor(respuesta.porcentaje);
+                respuesta.porcentaje = Math.round(respuesta.porcentaje);
             }
         }
          callback(encuesta);
