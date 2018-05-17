@@ -1,11 +1,12 @@
 {
-    "name": "api.toBusiness",
-    "version": "0.0.1",
-    "dependencies": {
-      "express": "~4.8.8",
-      "mongodb":"~2.0.14",
-      "merge":"~1.2.0",
-      "socket.io":"1.4.8"
+  "name": "att.socket.quiz",
+  "version": "0.0.1",
+  "dependencies": {
+    "body-parser": "~1.18.2",
+    "express": "~4.8.8",
+    "mongodb": "~2.0.14",
+    "merge": "~1.2.0",
+    "socket.io": "1.4.8"
   },
   "engines": {
     "node": "10.1.0",
